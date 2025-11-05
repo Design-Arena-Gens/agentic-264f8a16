@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #111111;
+  --brand-primary: #111827;
+  --brand-secondary: #b45309;
+  --brand-muted: #78716c;
+  --brand-accent: #d6e2fd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand-primary);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-card: 32px;
+  --width-content: clamp(320px, 92vw, 1200px);
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+  }
+}
+
+.shadow-soft {
+  box-shadow:
+    0 40px 120px -40px rgba(15, 23, 42, 0.25),
+    0 24px 80px -60px rgba(15, 23, 42, 0.15);
+}
+
+.backdrop-gradient {
+  background-image: radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(circle at 20% 20%, rgba(243, 244, 246, 0.9), transparent 60%);
+}
